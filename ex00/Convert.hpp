@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Convert.hpp                                 :+:      :+:    :+:   */
+/*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 14:27:59 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/11 14:35:54 by yeju             ###   ########.fr       */
+/*   Created: 2022/04/11 19:11:55 by yeju              #+#    #+#             */
+/*   Updated: 2022/04/11 20:26:18 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONVERT_HPP
 # define CONVERT_HPP
 
-//#pragma once
-#include <string>
 #include <iostream>
-#include <cstdlib>
-#include <cmath>
-//#include <cerrno>
-//#include <limits>
 #include <iomanip>
-//#include <cfloat>
-
-//#define PRECISION 1
-//#define FLT_MIN -3.40282e+38
-//#define FLT_MAX 3.40282e+38
 
 # define RESET	"\033[0m"
 # define RED	"\033[31m"

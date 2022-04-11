@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 19:05:23 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/11 19:05:24 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/11 20:34:34 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Base * generate(void)
 		return (static_cast<Base *>(new C()));
 }
 
-void identify(Base * p)
+void identify(Base* p)
 {
 	A * a = dynamic_cast<A *>(p);
 	B * b = dynamic_cast<B *>(p);
@@ -38,7 +38,7 @@ void identify(Base * p)
 		std::cout << "Can not identify this type" << std::endl;
 }
 
-void identify(Base & p)
+void identify(Base& p)
 {
 	try 
 	{
@@ -69,7 +69,7 @@ void identify(Base & p)
 int main(void)
 {
 	srand(time(NULL));
-
+	
 	Base *basePtr = generate();
 	Base &baseRef = *basePtr;
 
@@ -77,5 +77,5 @@ int main(void)
 	identify(baseRef);
 
 	delete basePtr;
-	return 0;
+	return (0);
 }

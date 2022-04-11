@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 19:06:37 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/11 19:06:42 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/11 19:45:09 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 struct Data
 {
-	int		i1;
-	int		i2;
-	char	c;
+	int		i;
+	unsigned long int		ul;
 	bool	b;
+	char	c;
+	double	d;
+	float	f;
 };
 
 uintptr_t serialize(Data* ptr)
@@ -33,26 +35,33 @@ Data* deserialize(uintptr_t raw)
 int main()
 {
 	Data data;
+	
 	Data *ptr;
 	uintptr_t raw;
 
-	data.i1 = 7;
-	data.i2 = 77;
-	data.c = 'M';
+	data.i = 42;
+	data.ul = 4294967295;
 	data.b = true;
+	data.c = 'c';
+	data.d = 12.43;
+	data.f = 0.123f;
 
-	std::cout << data.i1 << std::endl;
-	std::cout << data.i2 << std::endl;
+	std::cout << data.i << std::endl;
+	std::cout << data.ul << std::endl;
 	std::cout << data.c << std::endl;
 	std::cout << data.b << std::endl;
+	std::cout << data.f << std::endl;
+	std::cout << data.d << std::endl;
 	std::cout << "-----------------------" << std::endl;
 	raw = serialize(&data);
 	ptr = deserialize(raw);
-	std::cout << ptr->i1 << std::endl;
-	std::cout << ptr->i2 << std::endl;
+	std::cout << "-----------------------" << std::endl;
+	std::cout << ptr->i << std::endl;
+	std::cout << ptr->ul << std::endl;
 	std::cout << ptr->c << std::endl;
 	std::cout << ptr->b << std::endl;
-
+	std::cout << data.f << std::endl;
+	std::cout << data.d << std::endl;
 
 	return (0);
 }
