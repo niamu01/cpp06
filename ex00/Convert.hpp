@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONVERT_HPP
+# define CONVERT_HPP
+
 //#pragma once
 #include <string>
 #include <iostream>
@@ -42,7 +45,7 @@ public:
 
 	std::string getInput();
 
-	bool checkError();
+	bool inputError();
 
 	bool checkInputType();
 	
@@ -59,6 +62,6 @@ public:
 	
 };
 
-std::ostream& operator<<(std::ostream& out, const Convert& convert);
+// std::ostream& operator<<(std::ostream& out, const Convert& convert);
 
 #endif

@@ -1,5 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/11 16:03:21 by yeju              #+#    #+#             */
+/*   Updated: 2022/04/11 16:03:24 by yeju             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <iostream>
 #include "Convert.hpp"
 
 int main(int argc, char** argv)
@@ -17,35 +27,10 @@ int main(int argc, char** argv)
 			return 0;
 		}
 
-		Convert.convertToChar();
-		Convert.convertToInt();
-		Convert.convertToFloat();
-		Convert.convertToDouble();
+		Convert.toChar();
+		Convert.toInt();
+		Convert.toFloat();
+		Convert.toDouble();
 	}
 	return 0;
 }
-
-// ./convert 0
-// char: Non displayable
-// int: 0
-// float: 0.0f
-// double: 0.0
-//
-// ./convert nan
-// char: impossible
-// int: impossible
-// float: nanf
-// double: nan
-//
-// ./convert 42.0f
-// char:'*'
-// int: 42
-// float: 42.0f
-// double: 42.0
-
-// ./convert ~
-// char: ~
-// int: 126
-// float: 126.0f
-// double: 126.0
-

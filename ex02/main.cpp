@@ -1,20 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/11 19:05:23 by yeju              #+#    #+#             */
+/*   Updated: 2022/04/11 19:05:24 by yeju             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <iostream>
-#include <cstdlib> // srand function
 #include "main.hpp"
 
 Base * generate(void)
 {
 	int ret = rand() % 3;
 	if (ret == 0)
-		return static_cast<Base *>(new A());
+		return (static_cast<Base *>(new A()));
 	else if (ret == 1)
-		return static_cast<Base *>(new B());
+		return (static_cast<Base *>(new B()));
 	else
-		return static_cast<Base *>(new C());
+		return (static_cast<Base *>(new C()));
 }
 
-void identify_from_pointer(Base * p)
+void identify(Base * p)
 {
 	A * a = dynamic_cast<A *>(p);
 	B * b = dynamic_cast<B *>(p);
@@ -29,25 +38,31 @@ void identify_from_pointer(Base * p)
 		std::cout << "Can not identify this type" << std::endl;
 }
 
-void identify_from_reference(Base & p)
+void identify(Base & p)
 {
-	try {
+	try 
+	{
 		A & a = dynamic_cast<A &>(p);
 		a.print();
 	}
-	catch (std::exception &e){
+	catch (std::exception &e)
+	{
 	}
-	try {
+	try 
+	{
 		B & b = dynamic_cast<B &>(p);
 		b.print();
 	}
-	catch (std::exception &e){
+	catch (std::exception &e)
+	{
 	}
-	try {
+	try 
+	{
 		C & c = dynamic_cast<C &>(p);
 		c.print();
 	}
-	catch (std::exception &e){
+	catch (std::exception &e)
+	{
 	}
 }
 
@@ -56,10 +71,10 @@ int main(void)
 	srand(time(NULL));
 
 	Base *basePtr = generate();
-	Base & baseRef = *basePtr;
+	Base &baseRef = *basePtr;
 
-	identify_from_pointer(basePtr);
-	identify_from_reference(baseRef);
+	identify(basePtr);
+	identify(baseRef);
 
 	delete basePtr;
 	return 0;
