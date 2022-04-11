@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "typeConversion.hpp"
+#include "Convert.hpp"
 
 int main(int argc, char** argv)
 {
@@ -10,17 +10,17 @@ int main(int argc, char** argv)
 		std::cout << RED << "Too many arguments." << RESET << std::endl;
 	else
 	{
-		typeConversion typeConversion(argv[1]);
-		if (!typeConversion.checkInputType())
+		Convert Convert(argv[1]);
+		if (!Convert.checkInputType())
 		{
 			std::cout << RED << "Please enter one of the following scala types: char, int, float or double." << RESET << std::endl;
 			return 0;
 		}
 
-		typeConversion.convertToChar();
-		typeConversion.convertToInt();
-		typeConversion.convertToFloat();
-		typeConversion.convertToDouble();
+		Convert.convertToChar();
+		Convert.convertToInt();
+		Convert.convertToFloat();
+		Convert.convertToDouble();
 	}
 	return 0;
 }

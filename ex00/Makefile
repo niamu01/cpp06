@@ -1,9 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/11 14:26:31 by yeju              #+#    #+#              #
+#    Updated: 2022/04/11 14:47:07 by yeju             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = typeConversion
+NAME = convert
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror
 C98 = -std=c++98
-SRCS = typeConversion.cpp main.cpp
+SRCS = Convert.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
